@@ -1,19 +1,18 @@
-' ShowWifiPasswords.vbs
-' Creates a temporary .bat that lists Wi-Fi profiles and shows their passwords, then opens it in cmd.
+
 Option Explicit
 
 Dim fso, ws, tempFolder, batPath, ts, cmd
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set ws  = CreateObject("WScript.Shell")
 
-' Temp batch path
+
 tempFolder = ws.ExpandEnvironmentStrings("%TEMP%")
 batPath = tempFolder & "\__show_wifi_passwords.bat"
 
-' Remove old file if present
+
 If fso.FileExists(batPath) Then fso.DeleteFile batPath, True
 
-' Create the batch file (ASCII)
+
 Set ts = fso.CreateTextFile(batPath, True, False)
 
 ts.WriteLine "@echo off"
@@ -38,7 +37,7 @@ ts.WriteLine "echo."
 ts.WriteLine "pause"
 ts.Close
 
-' Run the batch file in an interactive cmd window and keep it open (/k)
+
 cmd = "cmd.exe /k """ & batPath & """"
 ws.Run cmd, 1, False
 
