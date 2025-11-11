@@ -1,11 +1,10 @@
 # Requirements ✅✨
 
-Windows (10/11 or similar)
+- **Windows:** Windows 10 / Windows 11 (or similar)
+- **Runner:** `cscript.exe` (built into Windows) — run from an **elevated** Command Prompt or PowerShell to reveal saved passwords
 
-cscript.exe (built into Windows) — run from an elevated Command Prompt/PowerShell to show passwords
 
-Usage
-
+## 🚀 Usage
 Open PowerShell or Command Prompt as Administrator, then run:
 
 cd C:\path\to\folder
